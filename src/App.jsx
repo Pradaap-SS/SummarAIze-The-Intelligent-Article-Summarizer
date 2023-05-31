@@ -1,9 +1,21 @@
-import React from 'react'
+import Hero from "./components/Hero";
+import Demo from "./components/Demo";
 
-const app = () => {
+import "./App.css";
+
+const App = () => {
   return (
-    <div>app</div>
-  )
-}
+    <main>
+      <div className='main'>
+        <div className='gradient' />
+      </div>
 
-export default app
+      <div className='app'>
+        <Hero />
+        <Demo />
+      </div>
+    </main>
+  );
+};
+
+export default App;
