@@ -1,14 +1,29 @@
-import { useEffect, useState } from "react"
-import {tick, copy, linkIcon, loader} from "../assets"
-import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
-
+import React, { useState, useEffect } from "react";
+import { copy, linkIcon, loader, tick } from "../assets";
+import { useLazyGetSummaryQuery } from "../services/article";
+import { ArrowRightCircleIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 const Demo = () => {
-  const[article, setArticle] = useState({ url:'', summary:'' });
+  const [article, setArticle] = useState({
+    url: "",
+    summary: "",
+  });
   
+  const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
+
   const handlesSubmit= async(e) => {
-    alert('Submitted');
+
+    e.preventDefault();
+    
+    const { data } = await getSummary({ articleUrl: article.url });
+    if (data?.summary) {
+      const newArticle = { ...article, summary: data.summary };
+      setArticle(newArticle);
+      
+      console.log(newArticle);
+    }
   }
+
   return (
     <section className="mt-16 w-full max-w-xl">
       {/*Search*/}
