@@ -1,8 +1,7 @@
 import { logo } from "../assets";
 
 const metadata = {
-  title: 'SummarAIze-The-Intelligent-Article-Summarizer',
-  description: 'Developed by Pradaap!'
+  title: 'SummarAIze-The-Intelligent-Article-Summarizer - Developed by Pradaap!'
 };
 
 const Hero = () => {
@@ -27,7 +26,7 @@ const Hero = () => {
         <span className='orange_gradient '>OpenAI GPT-4</span>
       </h1>
       <h2 className='desc'>
-        Simplify your reading with Summize, an open-source article summarizer
+        Simplify your reading with SummarAIze, an open-source article summarizer
         that transforms lengthy articles into clear and concise summaries
       </h2>
     </header>
