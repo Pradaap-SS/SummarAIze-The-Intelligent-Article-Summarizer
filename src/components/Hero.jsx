@@ -1,5 +1,10 @@
 import { logo } from "../assets";
 
+const metadata = {
+  title: 'SummarAIze-The-Intelligent-Article-Summarizer',
+  description: 'Developed by Pradaap!'
+};
+
 const Hero = () => {
   return (
     <header className='w-full flex justify-center items-center flex-col'>
